@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardBarBackground"
+    tools:context=".MainActivity">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardDrawBar"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/btnOathWhite"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/cardWhite"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.18" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="6/18 miss"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnOathWhite"
+            app:layout_constraintStart_toStartOf="@+id/btnOathWhite"
+            app:layout_constraintTop_toBottomOf="@+id/btnOathWhite" />
+
+        <Button
+            android:id="@+id/btnOathYellow"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/cardYellow"
+            android:text="x"
+            app:layout_constraintStart_toEndOf="@+id/btnOathWhite"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.18"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/textOathYellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnOathYellow"
+            app:layout_constraintStart_toStartOf="@+id/btnOathYellow"
+            app:layout_constraintTop_toBottomOf="@+id/btnOathYellow" />
+
+        <Button
+            android:id="@+id/btnOathRed"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/cardRed"
+            android:text="x"
+
+            app:layout_constraintStart_toEndOf="@+id/btnOathYellow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.18"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/textOathRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnOathRed"
+            app:layout_constraintStart_toStartOf="@+id/btnOathRed"
+            app:layout_constraintTop_toBottomOf="@+id/btnOathRed" />
+
+        <Button
+            android:id="@+id/btnOathBlack"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/cardBlack"
+            android:text="x"
+
+            app:layout_constraintStart_toEndOf="@+id/btnOathRed"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.18"
+            android:textColor="#FFFFFF"/>
+        <TextView
+            android:id="@+id/textOathBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnOathBlack"
+            app:layout_constraintStart_toStartOf="@+id/btnOathBlack"
+            app:layout_constraintTop_toBottomOf="@+id/btnOathBlack" />
+
+        <Button
+            android:id="@+id/btnOathDraw"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/cardDraw"
+            android:text="Draw"
+
+            android:textColor="#000000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/btnOathBlack"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/oathWhiteCards"
+        android:layout_width="0dp"
+        android:layout_height="500dp"
+        android:background="@color/cardBarBackground"
+        app:layout_constraintStart_toStartOf="@id/cardDrawBar"
+        app:layout_constraintBottom_toTopOf="@id/cardDrawBar"
+        android:layout_marginStart="5dp"
+        app:layout_constraintWidth_percent="0.18"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/btnOathWhiteCard1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardWhite"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathWhiteCard2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardWhite"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathWhiteCard1"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathWhiteCard3"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardWhite"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathWhiteCard2"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathWhiteCard4"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardWhite"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathWhiteCard3"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathWhiteCard5"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardWhite"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathWhiteCard4"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathWhiteCard6"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardWhite"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathWhiteCard5"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathWhiteCard7"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardWhite"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathWhiteCard6"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathWhiteCard8"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardWhite"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathWhiteCard7"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathWhiteCard9"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardWhite"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathWhiteCard8"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathWhiteCard10"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardWhite"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathWhiteCard9"
+            app:layout_constraintWidth_percent="0.8" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/oathYellowCards"
+        android:layout_width="0dp"
+        android:layout_height="500dp"
+        android:background="@color/cardBarBackground"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/oathWhiteCards"
+        app:layout_constraintBottom_toTopOf="@id/cardDrawBar"
+        app:layout_constraintWidth_percent="0.18"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/btnOathYellowCard1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardYellow"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathYellowCard2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardYellow"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathYellowCard1"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathYellowCard3"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardYellow"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathYellowCard2"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathYellowCard4"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardYellow"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathYellowCard3"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathYellowCard5"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardYellow"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathYellowCard4"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathYellowCard6"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardYellow"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathYellowCard5"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathYellowCard7"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardYellow"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathYellowCard6"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathYellowCard8"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardYellow"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathYellowCard7"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathYellowCard9"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardYellow"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathYellowCard8"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathYellowCard10"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardYellow"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathYellowCard9"
+            app:layout_constraintWidth_percent="0.8" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/oathRedCards"
+        android:layout_width="0dp"
+        android:layout_height="500dp"
+        android:background="@color/cardBarBackground"
+        app:layout_constraintBottom_toTopOf="@id/cardDrawBar"
+        app:layout_constraintStart_toEndOf="@id/oathYellowCards"
+        app:layout_constraintWidth_percent="0.18"
+        android:layout_marginStart="5dp"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/btnOathRedCard1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardRed"
+            android:text="{x}"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <Button
+            android:id="@+id/btnOathRedCard2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardRed"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@id/btnOathRedCard1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <Button
+            android:id="@+id/btnOathRedCard3"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardRed"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@id/btnOathRedCard2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <Button
+            android:id="@+id/btnOathRedCard4"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardRed"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@id/btnOathRedCard3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <Button
+            android:id="@+id/btnOathRedCard5"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardRed"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@id/btnOathRedCard4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <Button
+            android:id="@+id/btnOathRedCard6"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardRed"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@id/btnOathRedCard5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <Button
+            android:id="@+id/btnOathRedCard7"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardRed"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@id/btnOathRedCard6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <Button
+            android:id="@+id/btnOathRedCard8"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardRed"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@id/btnOathRedCard7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <Button
+            android:id="@+id/btnOathRedCard9"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardRed"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@id/btnOathRedCard8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <Button
+            android:id="@+id/btnOathRedCard10"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardRed"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toTopOf="@id/btnOathRedCard9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/oathBlackCards"
+        android:layout_width="0dp"
+        android:layout_height="500dp"
+        android:background="@color/cardBarBackground"
+        app:layout_constraintStart_toEndOf="@id/oathRedCards"
+        app:layout_constraintBottom_toTopOf="@id/cardDrawBar"
+        app:layout_constraintWidth_percent="0.18"
+        android:layout_marginStart="5dp"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/btnOathBlackCard1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardBlack"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathBlackCard2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardBlack"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathBlackCard1"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathBlackCard3"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardBlack"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathBlackCard2"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathBlackCard4"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardBlack"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathBlackCard3"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathBlackCard5"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardBlack"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathBlackCard4"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathBlackCard6"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardBlack"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathBlackCard5"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathBlackCard7"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardBlack"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathBlackCard6"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathBlackCard8"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardBlack"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathBlackCard7"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathBlackCard9"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardBlack"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathBlackCard8"
+            app:layout_constraintWidth_percent="0.8" />
+        <Button
+            android:id="@+id/btnOathBlackCard10"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/cardBlack"
+            android:text="x"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnOathBlackCard9"
+            app:layout_constraintWidth_percent="0.8" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oathsworn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/oathWhiteCards"
+        app:layout_constraintEnd_toStartOf="@+id/button5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
