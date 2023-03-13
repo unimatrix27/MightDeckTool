@@ -27,6 +27,7 @@ public class Card {
                 if(_isCritical){
                         return "{"+String.valueOf(_value)+"}";
                 }
+                if(_value==0) return "";
                 return String.valueOf(_value);
         }
 

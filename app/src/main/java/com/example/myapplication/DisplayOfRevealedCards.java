@@ -4,24 +4,55 @@ import java.util.List;
 
 public class DisplayOfRevealedCards {
 
-    private CardDeck _deck;
+    private DeckMode _mode;
+    private CardDeck _activeDeck;
+    private CardDeck _oathDeck;
+    private CardDeck _monsterDeck;
 
     private DrawCounter _counter;
     private List<CardDisplay> _displays;
+
+    private DeckController _parentController;
     public DisplayOfRevealedCards(List<CardDisplay> cardDisplays, DeckColor color){
-        _deck = new CardDeck(color);
+        _oathDeck = new CardDeck(color);
+        _monsterDeck = new CardDeck(color);
+        _activeDeck = _oathDeck;
         _displays = cardDisplays;
+        cardDisplays.forEach(display->{display.setParentDisplay(this);});
     }
+
+    public void setMode(DeckMode mode){
+        _mode=mode;
+        if(mode== DeckMode.OATHSWORN){
+            _activeDeck=_oathDeck;
+        }else{
+            _activeDeck=_monsterDeck;
+        }
+        if(_parentController!=null){
+            _parentController.updateViews();
+        }
+        refreshCardDisplays();
+        for (CardDisplay display : _displays) {
+            display.updateButton();
+        }
+    }
+
+
 
     public CardDeck getDeck() {
-        return _deck;
+        return _activeDeck;
     }
 
-    public Card drawCard() {
+    public Card drawCard(){
+        return drawCard(false);
+    }
+
+    public Card drawCard(boolean noMiss) {
         CardDisplay nextFree=getNextFreeDisplay();
         if(nextFree!=null){
-            Card randomCard = _deck.drawCard();
+            Card randomCard = _activeDeck.drawCard();
             nextFree.assignCard(randomCard);
+            _parentController.updateViews(noMiss);
             return randomCard;
         }
         return null;
@@ -39,12 +70,24 @@ public class DisplayOfRevealedCards {
 
     public void discard() {
         _displays.forEach(display->{
-            display.detachCard();
+            display.discard();
         });
     }
 
     public void reset() {
         discard();
-        _deck.reset();
+        _activeDeck.reset();
+    }
+
+    public void setParentController(DeckController deckController) {
+        _parentController=deckController;
+    }
+
+    public void refreshCardDisplays(){
+        _displays.forEach(display->{display.detach();});
+        _activeDeck.getCardsByStatus(CardStatus.REVEALED).forEach(card->{
+            getNextFreeDisplay().assignCard(card);
+        });
+
     }
 }

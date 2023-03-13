@@ -6,6 +6,7 @@ import android.widget.Button;
 public class CardDisplay {
     private Button _button;
     private Card _card;
+    private DisplayOfRevealedCards _parentDisplay;
 
     public CardDisplay(Button button) {
         _button = button;
@@ -18,12 +19,15 @@ public class CardDisplay {
         updateButton();
     }
 
-    public void detachCard(){
+    public void discard(){
         if(_card!=null){
             _card.discard();
         }
-        _card=null;
+        detach();
         updateButton();
+    }
+    public void detach(){
+        _card=null;
     }
 
     public void updateButton(){
@@ -32,6 +36,26 @@ public class CardDisplay {
         }else{
             _button.setText(_card.getText());
             _button.setVisibility(View.VISIBLE);
+            _button.setEnabled(true);
+            if(!_card.isCritical()){
+                _button.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        _parentDisplay.drawCard();
+                        discard();
+                        return false;
+                    }
+                });
+            }else{
+                _button.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        ((Button) view).setEnabled(false);
+                        _parentDisplay.drawCard(true);
+                        return false;
+                    }
+                });
+            }
         }
     }
 
@@ -48,4 +72,7 @@ public class CardDisplay {
         }
     }
 
+    public void setParentDisplay(DisplayOfRevealedCards displayOfRevealedCards) {
+        _parentDisplay = displayOfRevealedCards;
+    }
 }

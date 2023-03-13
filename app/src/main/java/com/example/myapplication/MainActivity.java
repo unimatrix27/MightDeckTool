@@ -97,8 +97,9 @@ public class MainActivity extends AppCompatActivity {
         allDeckControllers.add(redController);
         allDeckControllers.add(blackController);
 
-        DrawController drawController = new DrawController(findViewById(R.id.btnOathDraw),allDeckControllers,findViewById(R.id.resultText),oathCardBar);
 
+        DrawController drawController = new DrawController(findViewById(R.id.btnOathDraw),allDeckControllers,findViewById(R.id.resultText),oathCardBar);
+        ModeSwitcher modeSwitcher = new ModeSwitcher(drawController,findViewById(R.id.btnMode));
 
 
         // Drawbutton

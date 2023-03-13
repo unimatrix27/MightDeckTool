@@ -35,6 +35,7 @@ public class DrawController {
 
             }
         });
+        updateTextAndButton();
 
         _drawButton.setOnLongClickListener(new View.OnLongClickListener() {
             public boolean onLongClick(View v) {
@@ -43,6 +44,8 @@ public class DrawController {
                 return false;
             }
         });
+
+        _deckControllers.forEach(controller->{ controller.setParentController(this);});
     }
 
 
@@ -54,38 +57,41 @@ public class DrawController {
         _deckControllers.forEach(deckController->{
             deckController.discard();
         });
-        updateTextandButton();
+        //updateTextandButton();
     }
 
     private void reset() {
         _deckControllers.forEach(deckController->{
             deckController.reset();
         });
-        updateTextandButton();
+        //updateTextandButton();
     }
 
     public void draw(){
         _deckControllers.forEach(deckController->{
             deckController.draw();
         });
-        updateTextandButton();
+        //updateTextandButton();
 
     }
 
-    public void updateTextandButton(){
+    public void updateTextAndButton(){
+        updateTextAndButton(false);
+    }
+    public void updateTextAndButton(boolean noMiss){
         if(hasRevealedCards()){
             _drawButtonState=DrawButtonState.CLEAR;
         }else{
             _drawButtonState=DrawButtonState.DRAW;
         }
         _drawButton.setText(getDrawButtonText());
-        _resultText.setText(getResultText());
+        _resultText.setText(getResultText(noMiss));
 
     }
 
-    private String getResultText() {
+    private String getResultText(boolean noMiss) {
         String displayTest = String.valueOf(getTotal());
-        if(isMiss()) displayTest+=" (MISS)";
+        if(!noMiss && isMiss()) displayTest+=" (MISS)";
         return displayTest;
     }
 
@@ -108,4 +114,7 @@ public class DrawController {
         return "Reveal";
     }
 
+    public void setMode(DeckMode mode) {
+        _deckControllers.forEach(controller->{controller.setMode(mode);});
+    }
 }

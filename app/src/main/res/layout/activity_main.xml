@@ -634,7 +634,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/btnDraw"
+        android:id="@+id/btnMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Oathsworn"
@@ -645,12 +645,14 @@
         android:id="@+id/resultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:text="TextView"
-        android:textSize="20sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/oathWhiteCards"
         app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.493" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
