@@ -21,6 +21,13 @@ public class CardBar {
         registerButtonEvents(_allCounters);
     }
 
+    public DrawCounter getCounter(DeckColor color){
+        if(color==DeckColor.WHITE) return this._cntWhite;
+        if(color==DeckColor.YELLOW) return this._cntYellow;
+        if(color==DeckColor.RED) return this._cntRed;
+        return this._cntBlack;
+    }
+
     private void registerButtonEvents(DrawCounter[] counters){
         for(DrawCounter counter : counters){
             counter.getButton().setOnClickListener(new View.OnClickListener() {

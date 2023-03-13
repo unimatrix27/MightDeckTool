@@ -1,14 +1,8 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.stream.Stream;
 
 public class CardDeck {
@@ -65,6 +59,12 @@ public class CardDeck {
         });
     }
 
+    public void discard(){
+        _cards.forEach(card->{
+            if(card.getStatus()==CardStatus.REVEALED) card.discard();
+        });
+    }
+
     public void reshuffleDiscardPile(){
         _cards.stream().filter(card->card.getStatus()==CardStatus.DISCARDED).forEach(Card::reset);
         Collections.shuffle(_cards);
@@ -89,16 +89,32 @@ public class CardDeck {
 
 
     public int cardsAvailableCount(){
-        int cardsNotReveled = (int) _cards.stream().filter(card->card.getStatus()!=CardStatus.REVEALED).count();
-        int freeSpaces = (16-cardsNotReveled);
+        int cardsRevealed = (int)getCardsByStatus(CardStatus.REVEALED).count();
+        int cardsNotReveled=18-cardsRevealed;
+        int freeSpaces = freeSpacesCount();
         if(cardsNotReveled>freeSpaces) return freeSpaces;
         return cardsNotReveled;
     }
 
+    public int freeSpacesCount(){
+        return 10-(int)getCardsByStatus(CardStatus.REVEALED).count();
+    }
 
     public void drawCards(int amount){
         for(int i=0;i<amount;i++){
             drawCard();
         }
+    }
+
+    public int getRemainingMisses() {
+        return (int) getCardsByStatus(CardStatus.DECK).filter(card->card.getValue()==0).count();
+    }
+
+    public int getMisses() {
+        return (int) getCardsByStatus(CardStatus.REVEALED).filter(card->card.getValue()==0).count();
+    }
+
+    public int getTotal() {
+        return (int) getCardsByStatus(CardStatus.REVEALED).mapToInt(card->card.getValue()).sum();
     }
 }

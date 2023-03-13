@@ -9,6 +9,7 @@ public class DrawCounter {
     public DrawCounter(Button button){
         this._value=0;
         this._button=button;
+        button.setText("");
     }
 
     public Button getButton(){
@@ -21,6 +22,7 @@ public class DrawCounter {
 
     public void reset(){
         this._value=0;
+        _button.setText("");
     }
 
     public int getValue(){

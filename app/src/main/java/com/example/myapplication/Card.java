@@ -10,7 +10,7 @@ public class Card {
 
         public Card(int value, boolean isCritical,DeckColor color){
                 _value=value;
-                isCritical=isCritical;
+                _isCritical=isCritical;
                 _color=color;
                 _status=CardStatus.DECK;
         }
